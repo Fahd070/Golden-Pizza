@@ -20,6 +20,7 @@ body {
     align-items: center;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.145);
     position: fixed;
+    z-index: 1;
 }
 h4 {
     color: #ffffffb8;
@@ -52,4 +53,9 @@ h4 {
 .items i:hover {
     color: #ffcc00;
     transform: scale(1.1);
+}
+.promo video{
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
 }
