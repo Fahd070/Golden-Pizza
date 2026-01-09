@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Cause:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #000;
+    background-image: url(../media/image/background.jpg);
+    ::selection {
+        background: #ffcc002b;
+    }
+}
+.page-top {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.145);
+    position: fixed;
+}
+h4 {
+    color: #ffffffb8;
+    font-size: 28px;
+    font-family: "Cause", cursive;
+}
+.basic {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.basic img {
+    height: 80px;
+    opacity: 0.6;
+}
+.items {
+    display: flex;
+    align-items: center;
+}
+.items i {
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.349);
+    padding: 3px 20px;
+    transition: all 0.5s ease;
+}
+.items i:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
