@@ -417,4 +417,7 @@ h4 {
     .copyright {
         top: 70px;
     }
+    .Menu-list {
+        gap: 70px;
+    }
 }
