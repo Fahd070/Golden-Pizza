@@ -12,9 +12,9 @@ html {
 body {
     background-color: #000;
     background-image: url(../media/image/background.jpg);
-    ::selection {
-        background: #ffcc002b;
-    }
+}
+::selection {
+    background: #ffcc002b;
 }
 
 /* Header Section */
