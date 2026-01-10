@@ -359,3 +359,62 @@ h4 {
     position: relative;
     top: 90px;
 }
+
+/* Responsive Design */
+
+@media (max-width: 1388px) and (min-width: 200px) {
+    .language {
+        left: 20px;
+        margin-right: 40px;
+    }
+    .page-top {
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 1026px) and (min-width: 200px) {
+    .order-now {
+        left: 10px;
+        margin-right: 50px;
+        padding: 8px;
+    }
+}
+@media (min-width: 420px) and (max-width: 1094px) {
+    .loging img {
+        width: 180px;
+        height: auto;
+        position: absolute;
+        left: 40%;
+        top: 11%;
+    }
+    .comment-list {
+        gap: 70px;
+
+    }
+    .comment-item {
+        width: 200px;
+    }
+    .footer-content img {
+        width: 150px;
+        height: auto;
+        position: relative;
+        top: 15px;
+    }
+    .footer-content a {
+        font-size: 20px;
+        margin: 15px 50px;
+        position: relative;
+        top: 10px;
+    }
+    .social-media i {
+        padding: 3px;
+        font-size: 20px;
+    }
+    .social-media a {
+        position: relative;
+        top: 30px;
+        margin: 10px 5px;     
+    }
+    .copyright {
+        top: 70px;
+    }
+}
