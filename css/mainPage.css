@@ -182,14 +182,14 @@ h4 {
     font-size: 36px;
     margin-bottom: 40px;
 }
-.Menu-list {
+.Menu-list{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 200px;
 }
-.Menu-item {
+.Menu-item{
     border: 1px solid rgba(255, 255, 255, 0.237);
     padding: 25px 20px 30px 20px;
     text-align: center;
@@ -207,7 +207,7 @@ h4 {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.adding {
+.adding{
     display: flex;
     justify-content: center;
     align-items: center;
