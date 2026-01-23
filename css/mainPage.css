@@ -168,12 +168,97 @@ h4 {
     transition: all 0.3s ease;
 }
 
+/* design list */
+.lists {
+    position: absolute;
+    top: 110px;
+    width: 100%;
+    height: 740px;
+    background: #ffcc00;
+    z-index: 8;
+    transition: all ease-in-out 0.3s;
+}
+.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+.links {
+    display: grid;
+    text-align: center;
+}
+.links a {
+    text-decoration: none;
+    font-size: 47px;
+    padding: 40px;
+    color: #333333c0;
+    position: relative;
+    top: 70px;
+    opacity: 0.9;
+}
+.links a:hover {
+    opacity: 1;
+    color: #333;
+}
+
+/*dialog section */
+.userLogin {
+    background-color: rgba(255, 255, 255, 0.775);
+    border: transparent;
+    border-radius: 35px;
+    padding: 60px 40px;
+    position: fixed;
+    left: 590px;
+    top: 200px;
+}
+.ri-close-large-line {
+    font-size: 25px;
+    position: relative;
+    bottom: 20px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+.ri-close-large-line:hover {
+    opacity: 1;
+}
+.userName, .password, .checkBox, .submit, h2 {
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+.submit button{
+    padding: 5px 20px;
+    font-size: 20px;
+    background-color: rgb(9, 9, 49);
+    border: transparent;
+    border-radius: 35px;
+    color: white;
+}
+.submit button:hover {
+    background-color: rgb(16, 16, 93);
+    cursor: pointer;
+}
+.checkBox input, .Remember, u {
+    font-size: 20px;
+    margin-left: 10px;
+    color: rgb(0, 0, 0);
+}
+.userName input , .password input{
+    padding: 6px 20px;
+}
+.userName i , .password i{
+    font-size: 21px;
+    position: relative;
+    left: 25px;
+    opacity: 0.4;
+}
+
 /* body section */
 
 .Menus {
     margin-top: 50px;
     color: white;
-   /*  display: flex;
+    /*  display: flex;
     justify-content: center;
     align-items: center; */
 }
@@ -420,4 +505,18 @@ h4 {
     .Menu-list {
         gap: 70px;
     }
+}
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lists:not(.hide) .links a {
+    animation: slideDown 0.7s ease forwards;
 }
