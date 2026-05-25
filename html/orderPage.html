@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Customize and order your Golden Pizza. Choose your size, crust, and toppings.">
+    <title>Order – Golden Pizza</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/mainPage.css">
+    <link rel="stylesheet" href="../css/orderPage.css">
+    <link rel="icon" href="../media/image/logo.png" alt="logo" type="images/icon-x">
+</head>
+<body>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <button class="search-close" id="searchClose"><i class="ri-close-large-line"></i></button>
+            <div class="search-input-row">
+                <i class="ri-search-line"></i>
+                <input type="text" id="searchInput" placeholder="Search for a pizza..." data-i18n-placeholder="searchPlaceholder">
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- Login Dialog -->
+    <dialog class="userLogin" id="loginDialog"></dialog>
+
+    <header>
+        <div class="page-top">
+            <div class="basic">
+                <img src="../media/image/logo.png" alt="logo">
+                <h4>Golden Pizza</h4>
+                <div class="items">
+                    <div class="order-now"><a href="mainPage.html#menu" data-i18n="orderNow">Order Now</a></div>
+                    <i class="ri-user-line" id="loginBtn"></i>
+                    <i class="ri-search-line" id="searchBtn"></i>
+                    <i class="ri-home-line" id="homeBtn"></i>
+                    <select name="language" id="langSelect" class="language">
+                        <option value="en">English</option>
+                        <option value="ar">Arabic</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="order-main">
+
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+            <a href="mainPage.html" data-i18n="breadHome">Home</a>
+            <span class="sep">›</span>
+            <a href="mainPage.html#menu" data-i18n="breadMenu">Menu</a>
+            <span class="sep">›</span>
+            <span id="pizzaNameBreadcrumb">Loading...</span>
+        </nav>
+
+        <div class="order-container">
+
+            <!-- Left Panel -->
+            <div class="order-left">
+
+                <img id="orderImg" src="" alt="" class="order-hero-img">
+
+                <h2 id="orderName" class="order-pizza-name"></h2>
+                <p id="orderDesc" class="order-pizza-desc"></p>
+
+                <!-- Size -->
+                <div class="option-group">
+                    <h3 data-i18n="chooseSize">Choose Size</h3>
+                    <div class="size-options">
+
+                        <label class="size-btn">
+                            <input type="radio" name="size" value="small">
+                            <span class="size-name" data-i18n="sizeSmall">Small</span>
+                            <span class="size-adj">-$2.00</span>
+                        </label>
+
+                        <label class="size-btn active">
+                            <input type="radio" name="size" value="medium" checked>
+                            <span class="size-name" data-i18n="sizeMedium">Medium</span>
+                            <span class="size-adj" data-i18n="sizeStandard">Standard</span>
+                        </label>
+
+                        <label class="size-btn">
+                            <input type="radio" name="size" value="large">
+                            <span class="size-name" data-i18n="sizeLarge">Large</span>
+                            <span class="size-adj">+$3.00</span>
+                        </label>
+
+                    </div>
+                </div>
+
+                <!-- Crust -->
+                <div class="option-group">
+                    <h3 data-i18n="chooseCrust">Choose Crust</h3>
+                    <div class="crust-options">
+
+                        <label class="crust-label">
+                            <input type="radio" name="crust" value="Classic" checked>
+                            <span data-i18n="crustClassic">Classic</span>
+                        </label>
+
+                        <label class="crust-label">
+                            <input type="radio" name="crust" value="Thin & Crispy">
+                            <span data-i18n="crustThin">Thin &amp; Crispy</span>
+                        </label>
+
+                        <label class="crust-label">
+                            <input type="radio" name="crust" value="Thick & Fluffy">
+                            <span data-i18n="crustThick">Thick &amp; Fluffy</span>
+                        </label>
+
+                    </div>
+                </div>
+
+                <!-- Extras -->
+                <div class="option-group">
+                    <h3 data-i18n="extraToppings">Extra Toppings</h3>
+                    <div class="extras-grid">
+
+                        <label class="extra-label">
+                            <input type="checkbox" class="extra-check" value="1.50" data-name="Extra Cheese">
+                            <span><span class="extra-name" data-i18n="extraCheese">Extra Cheese</span> <em>+$1.50</em></span>
+                        </label>
+
+                        <label class="extra-label">
+                            <input type="checkbox" class="extra-check" value="1.00" data-name="Extra Sauce">
+                            <span><span class="extra-name" data-i18n="extraSauce">Extra Sauce</span> <em>+$1.00</em></span>
+                        </label>
+
+                        <label class="extra-label">
+                            <input type="checkbox" class="extra-check" value="2.00" data-name="Mushrooms">
+                            <span><span class="extra-name" data-i18n="extraMushrooms">Mushrooms</span> <em>+$2.00</em></span>
+                        </label>
+
+                        <label class="extra-label">
+                            <input type="checkbox" class="extra-check" value="1.50" data-name="Jalapeños">
+                            <span><span class="extra-name" data-i18n="extraJalapenos">Jalapeños</span> <em>+$1.50</em></span>
+                        </label>
+
+                        <label class="extra-label">
+                            <input type="checkbox" class="extra-check" value="1.00" data-name="Olives">
+                            <span><span class="extra-name" data-i18n="extraOlives">Olives</span> <em>+$1.00</em></span>
+                        </label>
+
+                        <label class="extra-label">
+                            <input type="checkbox" class="extra-check" value="1.00" data-name="Bell Peppers">
+                            <span><span class="extra-name" data-i18n="extraBellPeppers">Bell Peppers</span> <em>+$1.00</em></span>
+                        </label>
+
+                    </div>
+                </div>
+
+                <!-- Quantity -->
+                <div class="option-group">
+                    <h3 data-i18n="quantity">Quantity</h3>
+                    <div class="qty-control">
+                        <button class="qty-btn" id="qtyMinus">&#8722;</button>
+                        <span id="qtyDisplay">1</span>
+                        <button class="qty-btn" id="qtyPlus">&#43;</button>
+                    </div>
+                </div>
+
+                <!-- Special Instructions -->
+                <div class="option-group">
+                    <h3 data-i18n="specialInstructions">Special Instructions</h3>
+                    <textarea id="specialInstructions" placeholder="Any special requests? (e.g. no onions, extra crispy...)" data-i18n-placeholder="specialInstructionsPlaceholder"></textarea>
+                </div>
+
+            </div>
+
+            <!-- Right Panel -->
+            <div class="order-right">
+                <div class="order-summary">
+
+                    <div class="summary-pizza">
+                        <img id="summaryImg" src="" alt="">
+                        <div>
+                            <h3 id="summaryName"></h3>
+                            <span id="summarySize" class="summary-size-label"></span>
+                        </div>
+                    </div>
+
+                    <table class="price-table">
+                        <tr class="price-row">
+                            <td data-i18n="basePrice">Base Price</td>
+                            <td id="basePrice"></td>
+                        </tr>
+                        <tr class="price-row">
+                            <td data-i18n="sizeAdjustment">Size Adjustment</td>
+                            <td id="sizePrice"></td>
+                        </tr>
+                        <tr class="price-row">
+                            <td data-i18n="extrasLabel">Extras</td>
+                            <td id="extrasPrice"></td>
+                        </tr>
+                        <tr class="price-row">
+                            <td data-i18n="quantityLabel">Quantity</td>
+                            <td id="qtyBadge"></td>
+                        </tr>
+                        <tr class="price-row total">
+                            <td data-i18n="total">Total</td>
+                            <td id="totalPrice"></td>
+                        </tr>
+                    </table>
+
+                    <button class="place-order-btn" id="placeOrderBtn" data-i18n="placeOrder">Place Order 🍕</button>
+                    <a href="mainPage.html#menu" class="back-link" data-i18n="backToMenu">&#8592; Back to Menu</a>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Order Confirmation Overlay -->
+    <div class="confirm-overlay" id="confirmOverlay">
+        <div class="confirm-box">
+            <div class="confirm-icon">🎉</div>
+            <h2 data-i18n="orderPlaced">Order Placed!</h2>
+            <p data-i18n="orderSuccess">Your pizza is on its way. Thank you for choosing Golden Pizza!</p>
+            <div class="confirm-details" id="confirmDetails"></div>
+            <button id="confirmClose" data-i18n="backToMenuBtn">Back to Menu</button>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <img src="../media/image/logo.png" alt="logo">
+            <div class="contact-info">
+                <a href="#" data-i18n="contactUs">Contact us</a>
+                <a href="#" data-i18n="orderNowFooter">Order Now</a>
+                <a href="#" data-i18n="reviewLink">Review</a>
+                <div class="social-media">
+                    <a><i class="ri-instagram-line"></i></a>
+                    <a><i class="ri-snapchat-line"></i></a>
+                    <a><i class="ri-whatsapp-line"></i></a>
+                    <a><i class="ri-tiktok-fill"></i></a>
+                </div>
+                <div class="contact-me">
+                    <p data-i18n="emailLabel">Email: goldenpizza@example.com</p>
+                    <p data-i18n="phoneLabel">Phone: +1234567890</p>
+                </div>
+                <div class="copyright">
+                    <p data-i18n="copyright">&copy; 2024 Golden Pizza. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/i18n.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/orderPage.js"></script>
+</body>
+</html>

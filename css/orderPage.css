@@ -1,0 +1,459 @@
+/* ── Order Page Layout ───────────────────────────────── */
+
+.order-main {
+    padding-top: 130px;
+    min-height: 100vh;
+    color: white;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    max-width: 1100px;
+    margin: 0 auto 28px auto;
+    padding: 0 20px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.breadcrumb a:hover {
+    color: #ffcc00;
+}
+.breadcrumb .sep {
+    color: #ffcc00;
+    font-size: 16px;
+}
+.breadcrumb span:last-child {
+    color: #ffcc00;
+    font-weight: 600;
+}
+
+/* Two-column grid */
+.order-container {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+    align-items: start;
+}
+
+/* Left panel */
+.order-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Hero image */
+.order-hero-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(255, 204, 0, 0.25);
+    margin-bottom: 16px;
+}
+
+.order-pizza-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.order-pizza-desc {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+/* Option groups */
+.option-group {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.option-group:last-child {
+    border-bottom: none;
+}
+.option-group h3 {
+    color: #ffcc00;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+/* Size buttons */
+.size-options {
+    display: flex;
+    gap: 12px;
+}
+.size-btn {
+    flex: 1;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+}
+.size-btn input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.size-name {
+    font-size: 15px;
+    font-weight: 600;
+}
+.size-adj {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+.size-btn.active,
+.size-btn:has(input:checked) {
+    border-color: #ffcc00;
+    background: rgba(255, 204, 0, 0.1);
+}
+.size-btn.active .size-adj,
+.size-btn:has(input:checked) .size-adj {
+    color: #ffcc00;
+}
+.size-btn:hover {
+    border-color: rgba(255, 204, 0, 0.5);
+}
+
+/* Crust options */
+.crust-options {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.crust-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+.crust-label input[type="radio"] {
+    accent-color: #ffcc00;
+    width: 16px;
+    height: 16px;
+}
+.crust-label:has(input:checked) {
+    border-color: #ffcc00;
+    background: rgba(255, 204, 0, 0.1);
+    color: #ffcc00;
+}
+.crust-label:hover {
+    border-color: rgba(255, 204, 0, 0.5);
+}
+
+/* Extra toppings */
+.extras-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.extra-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+.extra-label input[type="checkbox"] {
+    accent-color: #ffcc00;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+.extra-label em {
+    font-style: normal;
+    color: #ffcc00;
+    margin-left: 4px;
+    font-size: 13px;
+}
+.extra-label:hover {
+    border-color: rgba(255, 204, 0, 0.4);
+    background: rgba(255, 255, 255, 0.03);
+}
+.extra-label:has(input:checked) {
+    border-color: #ffcc00;
+    background: rgba(255, 204, 0, 0.08);
+}
+
+/* Quantity */
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.qty-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: white;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+.qty-btn:hover {
+    border-color: #ffcc00;
+    color: #ffcc00;
+}
+#qtyDisplay {
+    font-size: 26px;
+    color: white;
+    font-weight: bold;
+    min-width: 32px;
+    text-align: center;
+}
+
+/* Special instructions */
+#specialInstructions {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: white;
+    padding: 14px;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+}
+#specialInstructions::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+#specialInstructions:focus {
+    border-color: #ffcc00;
+}
+
+/* ── Right Panel (sticky summary) ───────────────────── */
+.order-right {
+    position: sticky;
+    top: 130px;
+    align-self: start;
+}
+.order-summary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 24px;
+}
+.summary-pizza {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+#summaryImg {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.summary-pizza h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+.summary-size-label {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Price table */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+}
+.price-row td {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    padding: 6px 0;
+}
+.price-row td:last-child {
+    text-align: right;
+    font-weight: 500;
+}
+.price-row.total td {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Place order button */
+.place-order-btn {
+    width: 100%;
+    padding: 16px;
+    background: #ffcc00;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 18px;
+    transition: all 0.2s ease;
+}
+.place-order-btn:hover {
+    background: #ffd633;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 204, 0, 0.35);
+}
+
+/* Back link */
+.back-link {
+    display: block;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    margin-top: 14px;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+.back-link:hover {
+    color: white;
+}
+
+/* ── Confirmation Overlay ────────────────────────────── */
+.confirm-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.confirm-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.confirm-box {
+    background: rgba(20, 20, 20, 0.99);
+    border: 1px solid rgba(255, 204, 0, 0.4);
+    border-radius: 20px;
+    padding: 48px 40px;
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+    color: white;
+}
+.confirm-icon {
+    font-size: 60px;
+    margin-bottom: 16px;
+}
+.confirm-box h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+.confirm-box > p {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+.confirm-details {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    text-align: left;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.confirm-details p {
+    margin-bottom: 6px;
+}
+.confirm-details p:last-child {
+    margin-bottom: 0;
+}
+.confirm-details strong {
+    color: #ffcc00;
+}
+#confirmClose {
+    width: 100%;
+    padding: 16px;
+    background: #ffcc00;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+#confirmClose:hover {
+    background: #ffd633;
+    transform: translateY(-2px);
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+    .order-container {
+        grid-template-columns: 1fr;
+    }
+    .order-right {
+        position: static;
+    }
+    .size-options {
+        flex-direction: column;
+    }
+    .extras-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 480px) {
+    .order-main {
+        padding-top: 120px;
+    }
+    .confirm-box {
+        padding: 32px 20px;
+    }
+}

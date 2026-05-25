@@ -4,40 +4,46 @@
     <meta charset="UTF-8">
     <meta name="description" content="Golden Pizza offers a wide variety of delicious pizzas made with fresh ingredients and rich flavors. Order now and enjoy the golden taste you love.">
     <title>Golden Pizza</title>
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css"
-    rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/mainPage.css">
     <link rel="icon" href="../media/image/logo.png" alt="logo" type="images/icon-x">
 </head>
 <body>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <button class="search-close" id="searchClose"><i class="ri-close-large-line"></i></button>
+            <div class="search-input-row">
+                <i class="ri-search-line"></i>
+                <input type="text" id="searchInput" placeholder="Search for a pizza..." data-i18n-placeholder="searchPlaceholder">
+            </div>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- Login Dialog -->
+    <dialog class="userLogin" id="loginDialog"></dialog>
+
     <header>
         <div class="page-top">
             <div class="basic">
                 <img src="../media/image/logo.png" alt="logo">
                 <h4>Golden Pizza</h4>
                 <div class="items">
-                    <div class="order-now"><a href="#menu">Order Now</a></div>
-                    <i class="ri-user-line"></i>
-                    <i class="ri-search-line"></i>
-                    <i class="ri-menu-line"></i>
-                    <select name="language" class="language">
-                    <option value="English">English</option>
-                    <option value="Arabic">Arabic</option>
-                </select>
+                    <div class="order-now"><a href="#menu" data-i18n="orderNow">Order Now</a></div>
+                    <i class="ri-user-line" id="loginBtn"></i>
+                    <i class="ri-search-line" id="searchBtn"></i>
+                    <i class="ri-home-line" id="homeBtn"></i>
+                    <select name="language" id="langSelect" class="language">
+                        <option value="en">English</option>
+                        <option value="ar">Arabic</option>
+                    </select>
                 </div>
             </div>
         </div>
-        <dialog class="userLogin"></dialog>
-        <div class="lists hide">
-            <nav class="links">
-                <a href="#">Home</a>
-                <a href="#contact">Contact us</a>
-                <a href="#review">Review</a>
-                <a href="#menu">Order now</a>
-            </nav>
-        </div>
     </header>
+
     <main>
         <div class="promo">
             <video src="../media/video/Pizza_Promo.mov" muted loop autoplay playsinline></video>
@@ -50,40 +56,42 @@
             <i class="ri-shopping-cart-line"></i>
         </div>
         <div class="Menus" id="menu">
-            <h2>Our Menu</h2>
-            <div class="Menu-list">
-            </div>
+            <h2 data-i18n="ourMenu">Our Menu</h2>
+            <div class="Menu-list"></div>
         </div>
-        <div class="comments" id="review">
-            <h2>Customer Reviews</h2>
-            <div class="comment-list">
-                
-            </div>
+        <div class="comments" id="reviews">
+            <h2 data-i18n="customerReviews">Customer Reviews</h2>
+            <div class="comment-list"></div>
         </div>
     </main>
-    <footer>
-        <div class="footer-content" id="contact">
+
+    <footer id="contact">
+        <div class="footer-content">
             <img src="../media/image/logo.png" alt="logo">
             <div class="contact-info">
-                <a href="#contact">Contact us</a>
-                <a href="#menu">Order Now</a>
-                <a href="#review">Review</a>
-            <div class="social-media">
-                        <a><i class="ri-instagram-line"></i></a>
-                        <a><i class="ri-snapchat-line"></i></a>
-                        <a><i class="ri-whatsapp-line"></i></a>
-                        <a><i class="ri-tiktok-fill"></i></a>
-            </div>
+                <a href="#" data-i18n="contactUs">Contact us</a>
+                <a href="#" data-i18n="orderNowFooter">Order Now</a>
+                <a href="#" data-i18n="reviewLink">Review</a>
+                <div class="social-media">
+                    <a><i class="ri-instagram-line"></i></a>
+                    <a><i class="ri-snapchat-line"></i></a>
+                    <a><i class="ri-whatsapp-line"></i></a>
+                    <a><i class="ri-tiktok-fill"></i></a>
+                </div>
                 <div class="contact-me">
-                    <p>Email: goldenpizza@example.com</p>
-                    <p>Phone: +1234567890</p>
+                    <p data-i18n="emailLabel">Email: goldenpizza@example.com</p>
+                    <p data-i18n="phoneLabel">Phone: +1234567890</p>
                 </div>
                 <div class="copyright">
-                    <p>&copy; 2024 Golden Pizza. All rights reserved.</p>
+                    <p data-i18n="copyright">&copy; 2024 Golden Pizza. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="../js/main.js" type="module"></script>
+
+    <script src="../js/i18n.js"></script>
+    <script src="../js/products.js"></script>
+    <script src="../js/comments.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

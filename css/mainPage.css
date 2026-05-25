@@ -292,11 +292,12 @@ h4 {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.adding{
+.adding {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 15px;
+    gap: 12px;
 }
 .adding button:hover {
     opacity: 1;
@@ -316,11 +317,12 @@ h4 {
 .adding select {
     background: none;
     color: white;
-    position: relative;
-    left: 20px;
-    padding: 5px;
+    padding: 5px 8px;
     font-size: 15px;
     opacity: 0.6;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
 }
 .adding option {
     background: none;
@@ -519,4 +521,177 @@ h4 {
 
 .lists:not(.hide) .links a {
     animation: slideDown 0.7s ease forwards;
+}
+
+/* ── Search Overlay ─────────────────────────────────── */
+.search-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.93);
+  z-index: 200;
+  display: flex; flex-direction: column; align-items: center;
+  padding-top: 130px;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.search-overlay.active { opacity: 1; visibility: visible; }
+.search-box { width: 90%; max-width: 680px; position: relative; }
+.search-input-row {
+  display: flex; align-items: center;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid #ffcc00; border-radius: 50px;
+  padding: 14px 24px; gap: 12px;
+}
+.search-input-row i { color: #ffcc00; font-size: 22px; }
+#searchInput {
+  background: none; border: none; color: white;
+  font-size: 20px; flex: 1; outline: none;
+}
+#searchInput::placeholder { color: rgba(255,255,255,0.4); }
+.search-close {
+  position: absolute; top: -70px; right: 0;
+  color: white; font-size: 32px; cursor: pointer;
+  opacity: 0.6; transition: opacity 0.2s, transform 0.2s;
+  background: none; border: none;
+}
+.search-close:hover { opacity: 1; transform: rotate(90deg); }
+.search-results {
+  margin-top: 24px;
+  display: flex; flex-direction: column; gap: 12px;
+  max-height: 55vh; overflow-y: auto;
+}
+.search-result-item {
+  display: flex; align-items: center; gap: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,204,0,0.25);
+  border-radius: 14px; padding: 12px 16px;
+  text-decoration: none; color: white;
+  transition: all 0.2s;
+}
+.search-result-item:hover {
+  background: rgba(255,204,0,0.12);
+  border-color: #ffcc00; transform: translateX(4px);
+}
+.search-result-item img {
+  width: 64px; height: 64px;
+  border-radius: 10px; object-fit: cover; flex-shrink: 0;
+}
+.result-info { flex: 1; }
+.result-info h4 { font-size: 16px; margin-bottom: 4px; }
+.result-price { color: #ffcc00; font-size: 16px; font-weight: bold; }
+.search-result-item .ri-arrow-right-s-line { font-size: 22px; opacity: 0.5; }
+.no-results {
+  text-align: center; color: rgba(255,255,255,0.45);
+  font-size: 17px; padding: 40px 0;
+}
+
+/* ── Improved Login Dialog ──────────────────────────── */
+.userLogin {
+  background: rgba(10,10,10,0.97) !important;
+  border: 1px solid rgba(255,204,0,0.3) !important;
+  border-radius: 20px !important;
+  padding: 0 !important;
+  width: 380px; max-width: 95vw;
+  position: fixed !important;
+  left: 50% !important; top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  color: white;
+}
+.userLogin::backdrop { background: rgba(0,0,0,0.7); }
+.dialog-close {
+  position: absolute; top: 16px; right: 20px;
+  background: none; border: none; color: white;
+  font-size: 22px; cursor: pointer; opacity: 0.5;
+  transition: opacity 0.2s;
+}
+.dialog-close:hover { opacity: 1; }
+.login-header {
+  text-align: center; padding: 36px 32px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.login-header img { width: 60px; margin-bottom: 12px; opacity: 0.9; }
+.login-header h2 { font-size: 22px; margin-bottom: 6px; }
+.login-header p { color: rgba(255,255,255,0.5); font-size: 14px; }
+#loginForm { padding: 24px 32px 32px; display: flex; flex-direction: column; gap: 14px; }
+.field-group {
+  display: flex; align-items: center; gap: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px; padding: 12px 16px;
+  transition: border-color 0.2s;
+}
+.field-group:focus-within { border-color: #ffcc00; }
+.field-group i { color: rgba(255,255,255,0.4); font-size: 18px; }
+.field-group input {
+  background: none; border: none; color: white;
+  font-size: 15px; flex: 1; outline: none;
+}
+.field-group input::placeholder { color: rgba(255,255,255,0.3); }
+.remember-row {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14px; color: rgba(255,255,255,0.6); cursor: pointer;
+}
+.login-submit {
+  background: #ffcc00; color: #000;
+  border: none; border-radius: 10px;
+  padding: 13px; font-size: 16px; font-weight: bold;
+  cursor: pointer; transition: all 0.2s; margin-top: 4px;
+}
+.login-submit:hover { background: #ffd633; transform: translateY(-1px); }
+.signup-link { text-align: center; font-size: 13px; color: rgba(255,255,255,0.5); }
+.signup-link a { color: #ffcc00; text-decoration: none; }
+.login-success {
+  text-align: center; padding: 50px 32px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+}
+.success-icon { font-size: 50px; }
+.login-success h2 { font-size: 24px; }
+.login-success p { color: rgba(255,255,255,0.6); }
+.login-success button {
+  background: #ffcc00; color: #000;
+  border: none; border-radius: 10px;
+  padding: 10px 28px; font-size: 15px; font-weight: bold;
+  cursor: pointer; margin-top: 10px;
+}
+
+/* ── Menu card hover ────────────────────────────────── */
+.Menu-item { cursor: pointer; transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.Menu-item:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(255,204,0,0.2); }
+.Menu-item img { transition: transform 0.3s ease; }
+.Menu-item:hover img { transform: scale(1.05); }
+
+/* ── RTL Overrides ──────────────────────────────────── */
+[dir="rtl"] h4 {
+    left: auto;
+    right: 110px;
+}
+[dir="rtl"] .items {
+    left: auto;
+    right: 50px;
+}
+[dir="rtl"] .order-now {
+    right: auto;
+    left: 50px;
+}
+[dir="rtl"] .loging img {
+    left: auto;
+    right: 39%;
+}
+[dir="rtl"] .language {
+    left: auto;
+    right: 40px;
+}
+[dir="rtl"] .search-result-item:hover {
+    transform: translateX(-4px);
+}
+[dir="rtl"] .comment-item span {
+    left: auto;
+    right: 48px;
+}
+[dir="rtl"] .rating {
+    right: auto;
+    left: 38px;
+}
+[dir="rtl"] .footer-content img {
+    right: auto;
+    left: 6%;
 }
